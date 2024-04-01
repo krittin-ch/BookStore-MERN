@@ -1,5 +1,5 @@
 import { PiBookOpenTextLight } from 'react-icons/pi';
-import { AiOutlineEdit } from 'react-icons/ai'
+import { AiOutlineClose } from 'react-icons/ai'
 import PropTypes from 'prop-types';
 
 const BookModal = ({ book, onClose }) => {
@@ -11,7 +11,7 @@ const BookModal = ({ book, onClose }) => {
             <div onClick={(event) => event.stopPropagation()}
             className="w-[600px] max-w-full h-[400px] bg-white rounded-xl p-4 flex flex-col relative"
             >
-                <AiOutlineEdit
+                <AiOutlineClose
                 className="absolute right-6 top-6 text-3xl text-red-600 cursor-pointer"
                 onClick={ onClose }
                 />
@@ -43,7 +43,8 @@ BookModal.propTypes = {
             author: PropTypes.string.isRequired,
             publishYear: PropTypes.number.isRequired
         })
-    ).isRequired
+    ).isRequired,
+    onClose: PropTypes.func.isRequired
 }
 
 export default BookModal;
